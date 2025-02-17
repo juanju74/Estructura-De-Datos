@@ -1,3 +1,4 @@
+// Juan David Arboleda Molina.Estructura De Datos.2025.17/02/2025.CAMPUS CALI.UNIVERSIDAD COOPERATIVA DE COLOMBIA
 import java.util.Scanner;
 
 public class Trabajo {

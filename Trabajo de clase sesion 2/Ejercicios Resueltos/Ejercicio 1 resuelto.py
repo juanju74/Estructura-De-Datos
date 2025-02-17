@@ -1,4 +1,4 @@
-# Juan David Arboleda Molina.Estructura De Datos.2025
+#Juan David Arboleda Molina.Estructura De Datos.2025.17/02/2025.CAMPUS CALI.UNIVERSIDAD COOPERATIVA DE COLOMBIA
 
 #Ejercicio 1 Comparación entre Búsqueda Lineal y Binaria
 

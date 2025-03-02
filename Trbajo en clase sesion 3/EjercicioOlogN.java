@@ -1,16 +1,22 @@
+import java.util.Scanner;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Scanner;
-
-public class EjercicioO1 {
-    // Método para obtener el primer elemento del array
-    public static int obtenerPrimerElemento(int[] arr) {
-        return arr[0];
+import java.util.Arrays;
+ 
+public class EjercicioOlogN {
+    public static int busquedaBinaria(int[] arr, int target) {
+        int izquierda = 0, derecha = arr.length - 1;
+        while (izquierda <= derecha) {
+            int medio = izquierda + (derecha - izquierda) / 2;
+            if (arr[medio] == target) return medio;
+            if (arr[medio] < target) izquierda = medio + 1;
+            else derecha = medio - 1;
+        }
+        return -1;
     }
-
+ 
     public static void main(String[] args) {
-        // Datos del encabezado
-        String nombre = "Juan David Arboleda Molina";
+         String nombre = "Juan David Arboleda Molina";
         String campus = "Campus Cali, U. Cooperativa de Colombia";
         String repositorioGit = "https://github.com/habolanos/ucc-estructuras/blob/master/sesion04/ejercicios/1-algoritmo-O1/PgmAlgoritmoO1.java";
 
@@ -27,29 +33,25 @@ public class EjercicioO1 {
         System.out.println("| 📂 Repositorio Git: " + repositorioGit);
         System.out.println("+----------------------------------------");
         System.out.println();
-
-        // Leer datos del usuario
         Scanner scanner = new Scanner(System.in);
-
+ 
         System.out.print("Ingrese el tamaño del array: ");
         int n = scanner.nextInt();
-        
-        if (n <= 0) {
-            System.out.println("El tamaño del array debe ser mayor a 0.");
-            return;
-        }
-
         int[] arr = new int[n];
-
-        System.out.println("Ingrese los elementos del array:");
+ 
+        System.out.println("Ingrese los elementos del array en orden ascendente:");
         for (int i = 0; i < n; i++) {
             arr[i] = scanner.nextInt();
         }
-
-        // Mostrar el primer elemento del array
-        System.out.println("El primer elemento del array es: " + obtenerPrimerElemento(arr));
-
-        // Cerrar el Scanner
-        scanner.close();
+ 
+        System.out.print("Ingrese el número a buscar: ");
+        int target = scanner.nextInt();
+ 
+        int resultado = busquedaBinaria(arr, target);
+        if (resultado != -1) {
+            System.out.println("Elemento encontrado en la posición: " + resultado);
+        } else {
+            System.out.println("Elemento no encontrado.");
+        }
     }
 }

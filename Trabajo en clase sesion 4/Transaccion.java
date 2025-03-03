@@ -1,13 +1,28 @@
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+public class Transaccion {
 
-public class Espacial {
+    private String id;
 
-    public static Double obtenerPrimerElemento(Double[] arr) { 
-        return arr[0];
+    private double monto;
+
+    private String tipo; // "deposito" o "retiro"
+
+    public Transaccion siguiente;
+
+ 
+
+    public Transaccion(String id, double monto, String tipo) {
+
+        this.id = id;
+
+        this.monto = monto;
+
+        this.tipo = tipo;
+
+        this.siguiente = null;
+
     }
 
     public static void main(String[] args) {
@@ -25,8 +40,28 @@ public class Espacial {
         System.out.println("| 📅 Fecha y hora: " + fechaHora);
         System.out.println("| 📂 Repositorio Git: " + repositorioGit);
         System.out.println("+----------------------------------------\n");
-
-        Double[] temperaturas = {-60.5, -55.2, -53.8};
-        System.out.println("🚀 La primera temperatura registrada en Marte es: " + obtenerPrimerElemento(temperaturas) + "°C");
     }
+
+    public String getId() {
+
+        return id;
+
+    }
+
+ 
+
+    public double getMonto() {
+
+        return monto;
+
+    }
+
+ 
+
+    public String getTipo() {
+
+        return tipo;
+
+    }
+
 }

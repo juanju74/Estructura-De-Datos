@@ -1,21 +1,15 @@
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class Bancario {
-    public static void ordenarClientes(String[] clientes, double[] ingresos) {
-        int n = ingresos.length;
+public class Espacial4 {
+    public static void ordenarTemperaturas(int[] temperaturas) {
+        int n = temperaturas.length;
         for (int i = 0; i < n - 1; i++) {
             for (int j = 0; j < n - i - 1; j++) {
-                if (ingresos[j] < ingresos[j + 1]) {
-                    // Intercambiar ingresos
-                    double tempIngreso = ingresos[j];
-                    ingresos[j] = ingresos[j + 1];
-                    ingresos[j + 1] = tempIngreso;
-
-                    // Intercambiar nombres de clientes
-                    String tempCliente = clientes[j];
-                    clientes[j] = clientes[j + 1];
-                    clientes[j + 1] = tempCliente;
+                if (temperaturas[j] > temperaturas[j + 1]) {
+                    int temp = temperaturas[j];
+                    temperaturas[j] = temperaturas[j + 1];
+                    temperaturas[j + 1] = temp;
                 }
             }
         }
@@ -37,14 +31,12 @@ public class Bancario {
         System.out.println("| 📂 Repositorio Git: " + repositorioGit);
         System.out.println("+----------------------------------------\n");
 
-        String[] clientes = {"Carlos", "Ana", "Beatriz", "Elena", "Daniel"};
-        double[] ingresos = {3500.0, 7200.5, 4800.0, 2900.0, 6000.0};
+        int[] temperaturas = {5000, 3000, 7000, 4000, 6000};
+        ordenarTemperaturas(temperaturas);
 
-        ordenarClientes(clientes, ingresos);
-
-        System.out.println("🏦 Clientes ordenados por nivel de ingresos:");
-        for (int i = 0; i < clientes.length; i++) {
-            System.out.println("   " + clientes[i] + " - Ingresos: $" + ingresos[i]);
+        System.out.println("⭐ Estrellas ordenadas por temperatura:");
+        for (int temperatura : temperaturas) {
+            System.out.println("   " + temperatura + "K");
         }
     }
 }

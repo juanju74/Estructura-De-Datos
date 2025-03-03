@@ -1,18 +1,15 @@
+import java.util.Random;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class Telecomunicaciones {
-    public static void ordenarTorres(int[] intensidades) {
-        int n = intensidades.length;
-        for (int i = 0; i < n - 1; i++) {
-            for (int j = 0; j < n - i - 1; j++) {
-                if (intensidades[j] < intensidades[j + 1]) {
-                    int temp = intensidades[j];
-                    intensidades[j] = intensidades[j + 1];
-                    intensidades[j + 1] = temp;
-                }
-            }
+public class Espacial2 {
+
+    public static double sumarElementos(double[] arr) {
+        double suma = 0;
+        for (double num : arr) {
+            suma += num;
         }
+        return suma;
     }
 
     public static void main(String[] args) {
@@ -31,12 +28,13 @@ public class Telecomunicaciones {
         System.out.println("| 📂 Repositorio Git: " + repositorioGit);
         System.out.println("+----------------------------------------\n");
 
-        int[] intensidades = {40, 90, 60, 75, 30};
-        ordenarTorres(intensidades);
+        double[] consumoEnergia = new double[5]; // 5 módulos en la estación
+        Random rand = new Random();
 
-        System.out.println("📶 Torres ordenadas por intensidad de señal:");
-        for (int i = 0; i < intensidades.length; i++) {
-            System.out.println("   Torre " + (i + 1) + " - Intensidad: " + intensidades[i]);
+        for (int i = 0; i < consumoEnergia.length; i++) {
+            consumoEnergia[i] = rand.nextDouble() * 50; // Entre 0 y 50 kWh
         }
+
+        System.out.println("El consumo total de energía es: " + sumarElementos(consumoEnergia) + " kWh");
     }
 }

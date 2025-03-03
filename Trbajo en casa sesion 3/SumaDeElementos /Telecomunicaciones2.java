@@ -1,11 +1,15 @@
-import java.util.Arrays;
+import java.util.Random;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class Agropecuario {
-    public static boolean buscarPedido(String[] pedidos, String fecha) {
-        Arrays.sort(pedidos);
-        return Arrays.binarySearch(pedidos, fecha) >= 0;
+public class Telecomunicaciones2 {
+
+    public static double sumarElementos(double[] arr) {
+        double suma = 0;
+        for (double num : arr) {
+            suma += num;
+        }
+        return suma;
     }
 
     public static void main(String[] args) {
@@ -24,9 +28,13 @@ public class Agropecuario {
         System.out.println("| 📂 Repositorio Git: " + repositorioGit);
         System.out.println("+----------------------------------------\n");
 
-        String[] pedidos = {"2024-01-10", "2024-02-15", "2024-03-20"};
-        String fechaBuscar = "2024-02-15";
+        double[] anchoBanda = new double[10]; // 10 usuarios conectados
+        Random rand = new Random();
 
-        System.out.println(buscarPedido(pedidos, fechaBuscar) ? "✅ Pedido encontrado." : "❌ Pedido no encontrado.");
+        for (int i = 0; i < anchoBanda.length; i++) {
+            anchoBanda[i] = rand.nextDouble() * 100; // Entre 0 y 100 Mbps
+        }
+
+        System.out.println("El consumo total de ancho de banda es: " + sumarElementos(anchoBanda) + " Mbps");
     }
 }

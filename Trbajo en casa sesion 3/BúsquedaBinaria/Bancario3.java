@@ -1,15 +1,11 @@
+import java.util.Arrays;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class Espacial {
-    public static int encontrarMaximo(int[] datos) {
-        int maximo = datos[0];
-        for (int num : datos) {
-            if (num > maximo) {
-                maximo = num;
-            }
-        }
-        return maximo;
+public class Bancario3 {
+    public static int buscarClienteRiesgo(int[] transacciones, int monto) {
+        Arrays.sort(transacciones);
+        return Arrays.binarySearch(transacciones, monto);
     }
 
     public static void main(String[] args) {
@@ -28,7 +24,10 @@ public class Espacial {
         System.out.println("| 📂 Repositorio Git: " + repositorioGit);
         System.out.println("+----------------------------------------\n");
 
-        int[] temperaturasLuna = {-100, -50, 0, 50, 100, 120, 80};
-        System.out.println("🌕 Mayor temperatura registrada en la Luna: " + encontrarMaximo(temperaturasLuna) + "°C");
+        int[] transacciones = {1000, 5000, 10000, 20000, 50000};
+        int montoBuscar = 10000;
+
+        int indice = buscarClienteRiesgo(transacciones, montoBuscar);
+        System.out.println(indice >= 0 ? "✅ Cliente sospechoso encontrado en posición: " + indice : "❌ Cliente no encontrado.");
     }
 }

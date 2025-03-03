@@ -1,15 +1,11 @@
+import java.util.Arrays;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class Agropecuario {
-    public static int encontrarMaximo(int[] datos) {
-        int maximo = datos[0];
-        for (int num : datos) {
-            if (num > maximo) {
-                maximo = num;
-            }
-        }
-        return maximo;
+public class Agropecuario3 {
+    public static boolean buscarPedido(String[] pedidos, String fecha) {
+        Arrays.sort(pedidos);
+        return Arrays.binarySearch(pedidos, fecha) >= 0;
     }
 
     public static void main(String[] args) {
@@ -28,7 +24,9 @@ public class Agropecuario {
         System.out.println("| 📂 Repositorio Git: " + repositorioGit);
         System.out.println("+----------------------------------------\n");
 
-        int[] produccionLeche = {20, 25, 30, 28, 32, 27, 29};
-        System.out.println("🐄 Mayor producción de leche: " + encontrarMaximo(produccionLeche) + " litros");
+        String[] pedidos = {"2024-01-10", "2024-02-15", "2024-03-20"};
+        String fechaBuscar = "2024-02-15";
+
+        System.out.println(buscarPedido(pedidos, fechaBuscar) ? "✅ Pedido encontrado." : "❌ Pedido no encontrado.");
     }
 }

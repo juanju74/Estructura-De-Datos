@@ -1,22 +1,18 @@
-import java.util.Random;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class Espacial {
+public class Telecomunicaciones1 {
 
-    public static double sumarElementos(double[] arr) {
-        double suma = 0;
-        for (double num : arr) {
-            suma += num;
-        }
-        return suma;
+    public static String obtenerPrimerElemento(String[] arr) { 
+        return arr[0];
     }
 
     public static void main(String[] args) {
-        // Encabezado
         String nombre = "Juan Arboleda";
         String campus = "Campus Cali, U. Cooperativa de Colombia";
         String repositorioGit = "https://github.com/juanju74/Estructura-De-Datos";
+
         LocalDateTime ahora = LocalDateTime.now();
         DateTimeFormatter formateador = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
         String fechaHora = ahora.format(formateador);
@@ -28,13 +24,7 @@ public class Espacial {
         System.out.println("| 📂 Repositorio Git: " + repositorioGit);
         System.out.println("+----------------------------------------\n");
 
-        double[] consumoEnergia = new double[5]; // 5 módulos en la estación
-        Random rand = new Random();
-
-        for (int i = 0; i < consumoEnergia.length; i++) {
-            consumoEnergia[i] = rand.nextDouble() * 50; // Entre 0 y 50 kWh
-        }
-
-        System.out.println("El consumo total de energía es: " + sumarElementos(consumoEnergia) + " kWh");
+        String[] routers = {"Router_A", "Router_B", "Router_C"};
+        System.out.println("📡 El primer router activo es: " + obtenerPrimerElemento(routers));
     }
 }

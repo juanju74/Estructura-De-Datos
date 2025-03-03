@@ -1,15 +1,9 @@
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class Bancario {
-    public static int encontrarMaximo(int[] datos) {
-        int maximo = datos[0];
-        for (int num : datos) {
-            if (num > maximo) {
-                maximo = num;
-            }
-        }
-        return maximo;
+public class Espacial5 {
+    public static boolean esPar(int numero) {
+        return numero % 2 == 0;
     }
 
     public static void main(String[] args) {
@@ -28,7 +22,7 @@ public class Bancario {
         System.out.println("| 📂 Repositorio Git: " + repositorioGit);
         System.out.println("+----------------------------------------\n");
 
-        int[] transacciones = {1000, 5000, 7500, 9000, 12000, 8000, 9500};
-        System.out.println("🏦 Mayor transacción del día: $" + encontrarMaximo(transacciones));
+        int piezaEquipo = 451;
+        System.out.println("🚀 Número de pieza " + piezaEquipo + " es " + (esPar(piezaEquipo) ? "PAR" : "IMPAR"));
     }
 }

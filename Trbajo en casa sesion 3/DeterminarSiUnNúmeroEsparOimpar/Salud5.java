@@ -1,15 +1,9 @@
-import java.util.Random;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class Bancario {
-
-    public static double sumarElementos(double[] arr) {
-        double suma = 0;
-        for (double num : arr) {
-            suma += num;
-        }
-        return suma;
+public class Salud5 {
+    public static boolean esPar(int numero) {
+        return numero % 2 == 0;
     }
 
     public static void main(String[] args) {
@@ -28,13 +22,7 @@ public class Bancario {
         System.out.println("| 📂 Repositorio Git: " + repositorioGit);
         System.out.println("+----------------------------------------\n");
 
-        double[] depositos = new double[15]; // 15 depósitos realizados en el día
-        Random rand = new Random();
-
-        for (int i = 0; i < depositos.length; i++) {
-            depositos[i] = rand.nextDouble() * 10000; // Entre 0 y 10,000 $
-        }
-
-        System.out.println("El total de depósitos realizados hoy es: $" + sumarElementos(depositos));
+        int codigoMedicamento = 12345;
+        System.out.println("💊 Código de medicamento " + codigoMedicamento + " es " + (esPar(codigoMedicamento) ? "PAR" : "IMPAR"));
     }
 }

@@ -1,15 +1,9 @@
-import java.util.Random;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class Salud {
-
-    public static int sumarElementos(int[] arr) {
-        int suma = 0;
-        for (int num : arr) {
-            suma += num;
-        }
-        return suma;
+public class Bancario5 {
+    public static boolean esPar(int numero) {
+        return numero % 2 == 0;
     }
 
     public static void main(String[] args) {
@@ -28,13 +22,7 @@ public class Salud {
         System.out.println("| 📂 Repositorio Git: " + repositorioGit);
         System.out.println("+----------------------------------------\n");
 
-        // Simulación de consumo de calorías en 6 comidas
-        Random rand = new Random();
-        int[] calorias = new int[6];
-        for (int i = 0; i < calorias.length; i++) {
-            calorias[i] = rand.nextInt(500) + 100; // Calorías entre 100 y 600
-        }
-
-        System.out.println("El consumo total de calorías del paciente hoy es: " + sumarElementos(calorias) + " kcal");
+        int numeroCuenta = 1023456;
+        System.out.println("🏦 Número de cuenta " + numeroCuenta + " es " + (esPar(numeroCuenta) ? "PAR" : "IMPAR"));
     }
 }

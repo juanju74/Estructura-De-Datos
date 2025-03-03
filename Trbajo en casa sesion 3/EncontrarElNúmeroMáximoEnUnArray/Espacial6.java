@@ -1,9 +1,15 @@
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class Espacial {
-    public static boolean esPar(int numero) {
-        return numero % 2 == 0;
+public class Espacial6 {
+    public static int encontrarMaximo(int[] datos) {
+        int maximo = datos[0];
+        for (int num : datos) {
+            if (num > maximo) {
+                maximo = num;
+            }
+        }
+        return maximo;
     }
 
     public static void main(String[] args) {
@@ -22,7 +28,7 @@ public class Espacial {
         System.out.println("| 📂 Repositorio Git: " + repositorioGit);
         System.out.println("+----------------------------------------\n");
 
-        int piezaEquipo = 451;
-        System.out.println("🚀 Número de pieza " + piezaEquipo + " es " + (esPar(piezaEquipo) ? "PAR" : "IMPAR"));
+        int[] temperaturasLuna = {-100, -50, 0, 50, 100, 120, 80};
+        System.out.println("🌕 Mayor temperatura registrada en la Luna: " + encontrarMaximo(temperaturasLuna) + "°C");
     }
 }

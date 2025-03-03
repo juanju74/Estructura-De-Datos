@@ -1,11 +1,15 @@
-import java.util.Arrays;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class Telecomunicaciones {
-    public static int buscarCliente(int[] clientes, int numero) {
-        Arrays.sort(clientes);
-        return Arrays.binarySearch(clientes, numero);
+public class Bancario6 {
+    public static int encontrarMaximo(int[] datos) {
+        int maximo = datos[0];
+        for (int num : datos) {
+            if (num > maximo) {
+                maximo = num;
+            }
+        }
+        return maximo;
     }
 
     public static void main(String[] args) {
@@ -24,10 +28,7 @@ public class Telecomunicaciones {
         System.out.println("| 📂 Repositorio Git: " + repositorioGit);
         System.out.println("+----------------------------------------\n");
 
-        int[] clientes = {105, 204, 305, 408, 509};
-        int numeroBuscar = 305;
-
-        int indice = buscarCliente(clientes, numeroBuscar);
-        System.out.println(indice >= 0 ? "✅ Cliente encontrado en la posición: " + indice : "❌ Cliente no encontrado.");
+        int[] transacciones = {1000, 5000, 7500, 9000, 12000, 8000, 9500};
+        System.out.println("🏦 Mayor transacción del día: $" + encontrarMaximo(transacciones));
     }
 }

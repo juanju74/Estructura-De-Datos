@@ -1,7 +1,7 @@
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class Salud {
+public class Salud4 {
     public static void ordenarPacientes(int[] prioridades, String[] pacientes) {
         int n = prioridades.length;
         for (int i = 0; i < n - 1; i++) {

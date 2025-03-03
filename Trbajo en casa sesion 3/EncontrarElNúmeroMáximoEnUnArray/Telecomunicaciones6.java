@@ -1,9 +1,15 @@
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class Bancario {
-    public static boolean esPar(int numero) {
-        return numero % 2 == 0;
+public class Telecomunicaciones6 {
+    public static int encontrarMaximo(int[] datos) {
+        int maximo = datos[0];
+        for (int num : datos) {
+            if (num > maximo) {
+                maximo = num;
+            }
+        }
+        return maximo;
     }
 
     public static void main(String[] args) {
@@ -22,7 +28,7 @@ public class Bancario {
         System.out.println("| 📂 Repositorio Git: " + repositorioGit);
         System.out.println("+----------------------------------------\n");
 
-        int numeroCuenta = 1023456;
-        System.out.println("🏦 Número de cuenta " + numeroCuenta + " es " + (esPar(numeroCuenta) ? "PAR" : "IMPAR"));
+        int[] velocidades = {50, 100, 150, 200, 250, 300, 180};
+        System.out.println("📡 Mayor velocidad de descarga registrada: " + encontrarMaximo(velocidades) + " Mbps");
     }
 }

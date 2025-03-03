@@ -1,15 +1,11 @@
+import java.util.Arrays;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class Telecomunicaciones {
-    public static int encontrarMaximo(int[] datos) {
-        int maximo = datos[0];
-        for (int num : datos) {
-            if (num > maximo) {
-                maximo = num;
-            }
-        }
-        return maximo;
+public class Espacial3 {
+    public static int buscarImagen(String[] imagenes, String id) {
+        Arrays.sort(imagenes);
+        return Arrays.binarySearch(imagenes, id);
     }
 
     public static void main(String[] args) {
@@ -28,7 +24,10 @@ public class Telecomunicaciones {
         System.out.println("| 📂 Repositorio Git: " + repositorioGit);
         System.out.println("+----------------------------------------\n");
 
-        int[] velocidades = {50, 100, 150, 200, 250, 300, 180};
-        System.out.println("📡 Mayor velocidad de descarga registrada: " + encontrarMaximo(velocidades) + " Mbps");
+        String[] imagenes = {"IMG001", "IMG002", "IMG003", "IMG004"};
+        String buscar = "IMG003";
+
+        int indice = buscarImagen(imagenes, buscar);
+        System.out.println(indice >= 0 ? "✅ Imagen encontrada en la posición: " + indice : "❌ Imagen no encontrada.");
     }
 }

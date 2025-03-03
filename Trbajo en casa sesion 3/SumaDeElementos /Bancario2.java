@@ -1,11 +1,15 @@
-import java.util.Arrays;
+import java.util.Random;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class Bancario {
-    public static int buscarClienteRiesgo(int[] transacciones, int monto) {
-        Arrays.sort(transacciones);
-        return Arrays.binarySearch(transacciones, monto);
+public class Bancario2 {
+
+    public static double sumarElementos(double[] arr) {
+        double suma = 0;
+        for (double num : arr) {
+            suma += num;
+        }
+        return suma;
     }
 
     public static void main(String[] args) {
@@ -24,10 +28,13 @@ public class Bancario {
         System.out.println("| 📂 Repositorio Git: " + repositorioGit);
         System.out.println("+----------------------------------------\n");
 
-        int[] transacciones = {1000, 5000, 10000, 20000, 50000};
-        int montoBuscar = 10000;
+        double[] depositos = new double[15]; // 15 depósitos realizados en el día
+        Random rand = new Random();
 
-        int indice = buscarClienteRiesgo(transacciones, montoBuscar);
-        System.out.println(indice >= 0 ? "✅ Cliente sospechoso encontrado en posición: " + indice : "❌ Cliente no encontrado.");
+        for (int i = 0; i < depositos.length; i++) {
+            depositos[i] = rand.nextDouble() * 10000; // Entre 0 y 10,000 $
+        }
+
+        System.out.println("El total de depósitos realizados hoy es: $" + sumarElementos(depositos));
     }
 }

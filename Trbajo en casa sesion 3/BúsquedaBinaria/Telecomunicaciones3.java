@@ -1,9 +1,11 @@
+import java.util.Arrays;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class Telecomunicaciones {
-    public static boolean esPar(int numero) {
-        return numero % 2 == 0;
+public class Telecomunicaciones3 {
+    public static int buscarCliente(int[] clientes, int numero) {
+        Arrays.sort(clientes);
+        return Arrays.binarySearch(clientes, numero);
     }
 
     public static void main(String[] args) {
@@ -22,7 +24,10 @@ public class Telecomunicaciones {
         System.out.println("| 📂 Repositorio Git: " + repositorioGit);
         System.out.println("+----------------------------------------\n");
 
-        int numeroIP = 192;
-        System.out.println("📡 Número de IP " + numeroIP + " es " + (esPar(numeroIP) ? "PAR" : "IMPAR"));
+        int[] clientes = {105, 204, 305, 408, 509};
+        int numeroBuscar = 305;
+
+        int indice = buscarCliente(clientes, numeroBuscar);
+        System.out.println(indice >= 0 ? "✅ Cliente encontrado en la posición: " + indice : "❌ Cliente no encontrado.");
     }
 }

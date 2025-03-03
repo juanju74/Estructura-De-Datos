@@ -1,7 +1,7 @@
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class Agropecuario {
+public class Agropecuario5 {
     public static boolean esPar(int numero) {
         return numero % 2 == 0;
     }

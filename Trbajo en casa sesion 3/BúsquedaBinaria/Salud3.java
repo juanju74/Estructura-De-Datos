@@ -1,15 +1,11 @@
-import java.util.Random;
+import java.util.Arrays;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class Telecomunicaciones {
-
-    public static double sumarElementos(double[] arr) {
-        double suma = 0;
-        for (double num : arr) {
-            suma += num;
-        }
-        return suma;
+public class Salud3 {
+    public static int buscarDiagnostico(String[] historial, String diagnostico) {
+        Arrays.sort(historial);  // Asegurar que el array está ordenado
+        return Arrays.binarySearch(historial, diagnostico);
     }
 
     public static void main(String[] args) {
@@ -28,13 +24,10 @@ public class Telecomunicaciones {
         System.out.println("| 📂 Repositorio Git: " + repositorioGit);
         System.out.println("+----------------------------------------\n");
 
-        double[] anchoBanda = new double[10]; // 10 usuarios conectados
-        Random rand = new Random();
+        String[] historial = {"Diabetes", "Hipertensión", "Migraña", "Neumonía"};
+        String buscar = "Migraña";
 
-        for (int i = 0; i < anchoBanda.length; i++) {
-            anchoBanda[i] = rand.nextDouble() * 100; // Entre 0 y 100 Mbps
-        }
-
-        System.out.println("El consumo total de ancho de banda es: " + sumarElementos(anchoBanda) + " Mbps");
+        int indice = buscarDiagnostico(historial, buscar);
+        System.out.println(indice >= 0 ? "✅ Diagnóstico encontrado en la posición: " + indice : "❌ Diagnóstico no encontrado.");
     }
 }

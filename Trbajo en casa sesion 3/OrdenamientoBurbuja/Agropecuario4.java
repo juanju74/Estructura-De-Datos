@@ -1,9 +1,18 @@
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class Salud {
-    public static boolean esPar(int numero) {
-        return numero % 2 == 0;
+public class Agropecuario4 {
+    public static void ordenarParcelas(String[] parcelas) {
+        int n = parcelas.length;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (parcelas[j].compareTo(parcelas[j + 1]) > 0) {
+                    String temp = parcelas[j];
+                    parcelas[j] = parcelas[j + 1];
+                    parcelas[j + 1] = temp;
+                }
+            }
+        }
     }
 
     public static void main(String[] args) {
@@ -22,7 +31,12 @@ public class Salud {
         System.out.println("| 📂 Repositorio Git: " + repositorioGit);
         System.out.println("+----------------------------------------\n");
 
-        int codigoMedicamento = 12345;
-        System.out.println("💊 Código de medicamento " + codigoMedicamento + " es " + (esPar(codigoMedicamento) ? "PAR" : "IMPAR"));
+        String[] parcelas = {"2024-05-20", "2024-03-15", "2024-06-10", "2024-04-05"};
+        ordenarParcelas(parcelas);
+
+        System.out.println("🌱 Parcelas ordenadas por fecha de siembra:");
+        for (String parcela : parcelas) {
+            System.out.println("   " + parcela);
+        }
     }
 }

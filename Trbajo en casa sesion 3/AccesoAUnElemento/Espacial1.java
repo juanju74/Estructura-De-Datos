@@ -1,10 +1,8 @@
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
-public class Espacial {
+public class Espacial1 {
 
     public static Double obtenerPrimerElemento(Double[] arr) { 
         return arr[0];

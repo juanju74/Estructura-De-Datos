@@ -83,7 +83,7 @@ public class PruebaListaMantenimiento {
         scanner.close();
          String nombre = "Juan David Arboleda Molina";
         String campus = "Campus Cali, U. Cooperativa de Colombia";
-        String repositorioGit = "https://github.com/habolanos/ucc-estructuras/blob/master/sesion04/ejercicios/1-algoritmo-O1/PgmAlgoritmoO1.java";
+        String repositorioGit = "https://github.com/juanju74/Estructura-De-Datos/tree/main/Trabajo_en_casa_sesion_5";
 
         // Obtener la fecha y hora actual
         LocalDateTime ahora = LocalDateTime.now();

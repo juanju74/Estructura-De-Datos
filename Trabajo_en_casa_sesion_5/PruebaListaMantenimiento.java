@@ -25,25 +25,22 @@ public class PruebaListaMantenimiento {
 
             System.out.println("\nIngrese los datos del usuario " + (i + 1) + ":");
             
-            System.out.print("Nombre: ");
+            System.out.print(" ✏️ Nombre:  ");
             String nombre = scanner.nextLine();
 
-            System.out.print("Cédula: ");
+            System.out.print(" 🚹 Cédula : ");
             String cedula = scanner.nextLine();
 
-            System.out.print("ID dentro de la empresa: ");
+            System.out.print("📍 ID dentro de la empresa: ");
             String idEmpresa = scanner.nextLine();
 
-            System.out.print("Cargo: ");
+            System.out.print(" 🛂 Cargo: ");
             String cargo = scanner.nextLine();
 
             listaUsuarios.add(new PersonaQueIngresaAlSistema(nombre, cedula, idEmpresa, cargo));
         }
 
-      
         System.out.println("+--------------------------------------------------------+");
-
-
 
         // Ahora procedemos con las solicitudes de mantenimient
         
@@ -52,17 +49,17 @@ public class PruebaListaMantenimiento {
 
         System.out.println("Agregando solicitudes de mantenimiento...");
         
-        lista.agregarSolicitud("ID M001", "Bomba de Agua", "media");
+        lista.agregarSolicitud("🆔 M001", "Bomba de Agua🚰", "media📛");
 
-        lista.agregarSolicitud("ID M002", "Generador Principal", "alta");
+        lista.agregarSolicitud("🆔 M002", "Generador Principal⚙️", "alta⚠️");
 
-        lista.agregarSolicitud("ID M003", "Sistema de Ventilación", "baja");
-        
-        lista.agregarSolicitud("ID M004", "Sensor de Gas", "alta");
+        lista.agregarSolicitud("🆔 M003", "Sistema de Ventilación💨", "baja👣");
+
+        lista.agregarSolicitud("🆔 M004", "Sensor de Gas📡", "alta⚠️");
 
         // Mostrar solicitudes pendientes
 
-        System.out.println("\nSolicitudes pendientes:");
+        System.out.println("\n 📋 Solicitudes pendientes:");
 
         lista.mostrarSolicitudes();
 

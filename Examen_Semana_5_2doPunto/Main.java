@@ -33,14 +33,14 @@ public class Main {
 
             switch (opcion) {
                 case 1:
-                    System.out.print("Ingrese la descripción de la solicitud: ")
+                    System.out.print("Ingrese la descripción de la solicitud: ");
 
                     String descripcion = scanner.nextLine();
 
                     System.out.print("Ingrese de que nivel es su prioridad (Critica/Importante/General): ");
 
                     String prioridad = scanner.nextLine();
-                    
+
                     soporte.agregarSolicitud(descripcion, prioridad);
                     break;
                 case 2:

@@ -1,6 +1,6 @@
 package Examen_Semana_5_2doPunto;
 
-import java.util.ArrayList;
+
 
 public class Solicitud {
     private String descripcion;

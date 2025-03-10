@@ -1,5 +1,7 @@
 package Examen_Semana_5_2doPunto;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class Main {
@@ -8,6 +10,20 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         Soporte soporte = new Soporte();
         int opcion;
+
+                String nombre = "Juan Arboleda";
+        String campus = "Campus Cali, U. Cooperativa de Colombia";
+        String repositorioGit = "https://github.com/juanju74/Estructura-De-Datos";
+        LocalDateTime ahora = LocalDateTime.now();
+        DateTimeFormatter formateador = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+        String fechaHora = ahora.format(formateador);
+
+        System.out.println("+----------------------------------------");
+        System.out.println("| 👤 Nombre: " + nombre);
+        System.out.println("| 🎓 Campus: " + campus);
+        System.out.println("| 📅 Fecha y hora: " + fechaHora);
+        System.out.println("| 📂 Repositorio Git: " + repositorioGit);
+        System.out.println("+----------------------------------------\n");
 
         do {
             System.out.println(" MENU GESTION DE SOPORTE ");

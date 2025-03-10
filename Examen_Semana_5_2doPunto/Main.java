@@ -13,7 +13,7 @@ public class Main {
 
                 String nombre = "Juan Arboleda";
         String campus = "Campus Cali, U. Cooperativa de Colombia";
-        String repositorioGit = "https://github.com/juanju74/Estructura-De-Datos";
+        String repositorioGit = "https://github.com/juanju74/Estructura-De-Datos/tree/main/Examen_Semana_5_2doPunto";
         LocalDateTime ahora = LocalDateTime.now();
         DateTimeFormatter formateador = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
         String fechaHora = ahora.format(formateador);

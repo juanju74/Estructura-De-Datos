@@ -1,4 +1,4 @@
-package Trabajo_en_casa_sesion_5;
+package sesion5.Trabajo_en_casa_sesion_5;
 
 public class SolicitudMantenimiento {
     

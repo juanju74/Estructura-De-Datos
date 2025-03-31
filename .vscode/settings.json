@@ -1,6 +1,7 @@
 {
     "java.debug.settings.onBuildFailureProceed": true,
     "files.associations": {
-        "stack": "cpp"
+        "stack": "cpp",
+        "thread": "cpp"
     }
 }
